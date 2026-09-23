@@ -290,9 +290,165 @@ textarea{min-height:96px!important;max-height:none!important;overflow-y:hidden!i
     padding:10px;
   }
 }
+
+
+/* ===== Mobile action groups + readable calendar/time controls ===== */
+@media(max-width:620px){
+  .operation-actions,
+  .mod-record-actions,
+  .public-actions,
+  .entry-inline-actions{
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    flex-wrap:nowrap!important;
+    gap:7px!important;
+    width:100%!important;
+    padding-left:8px!important;
+    padding-right:8px!important;
+    box-sizing:border-box!important;
+  }
+
+  .operation-actions > .flag-control,
+  .operation-actions > .custom-photo-button,
+  .mod-record-actions > .flag-control,
+  .mod-record-actions > .mod-add-photo-btn,
+  .public-actions > .flag-control,
+  .public-actions > .public-add-photo-btn,
+  .entry-inline-actions > .flag-control,
+  .entry-inline-actions > .entry-add-photo,
+  .entry-inline-actions > .entry-delete-btn{
+    flex:0 0 118px!important;
+    width:118px!important;
+    min-width:118px!important;
+    max-width:118px!important;
+    height:38px!important;
+    min-height:38px!important;
+    max-height:38px!important;
+    padding:6px 8px!important;
+    border-radius:9px!important;
+    font-size:11px!important;
+    line-height:1!important;
+    margin:0!important;
+  }
+
+  .entry-inline-actions:has(> :nth-child(3)) > .flag-control,
+  .entry-inline-actions:has(> :nth-child(3)) > .entry-add-photo,
+  .entry-inline-actions:has(> :nth-child(3)) > .entry-delete-btn,
+  .operation-actions:has(> :nth-child(3)) > *,
+  .mod-record-actions:has(> :nth-child(3)) > *,
+  .public-actions:has(> :nth-child(3)) > *{
+    flex:1 1 0!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:108px!important;
+    height:36px!important;
+    min-height:36px!important;
+    max-height:36px!important;
+    padding:5px!important;
+    font-size:10px!important;
+    gap:3px!important;
+  }
+  .entry-inline-actions:has(> :nth-child(3)) .flag-control input,
+  .operation-actions:has(> :nth-child(3)) .flag-control input,
+  .mod-record-actions:has(> :nth-child(3)) .flag-control input,
+  .public-actions:has(> :nth-child(3)) .flag-control input{
+    width:14px!important;
+    min-width:14px!important;
+    height:14px!important;
+    min-height:14px!important;
+    flex-basis:14px!important;
+  }
+
+  .date-picker-dialog{
+    width:min(360px,calc(100vw - 18px))!important;
+    max-width:calc(100vw - 18px)!important;
+  }
+  .calendar-month-bar{
+    grid-template-columns:42px 1fr 42px!important;
+    min-height:48px!important;
+  }
+  .calendar-month-bar button{
+    height:46px!important;
+    font-size:27px!important;
+  }
+  .calendar-month-bar strong{
+    font-size:16px!important;
+    line-height:1.2!important;
+  }
+  .date-picker-body{padding:10px!important;}
+  .calendar-control{padding:10px!important;}
+  .calendar-weekdays,.calendar-days{gap:4px!important;}
+  .calendar-weekdays{margin-bottom:5px!important;}
+  .calendar-weekdays span{
+    padding:4px 0!important;
+    font-size:11.5px!important;
+    line-height:1.15!important;
+  }
+  .calendar-day{
+    min-height:39px!important;
+    aspect-ratio:1!important;
+    border-radius:8px!important;
+    font-size:13.5px!important;
+    line-height:1!important;
+  }
+  .time-grid{
+    grid-template-columns:1fr 1fr!important;
+    gap:8px!important;
+    margin-top:10px!important;
+  }
+  .time-grid select{
+    min-height:44px!important;
+    height:44px!important;
+    padding:7px 10px!important;
+    font-size:16px!important;
+    font-weight:800!important;
+    line-height:1.2!important;
+    color:#101b2f!important;
+    background:#fff!important;
+  }
+  .calendar-footer{
+    gap:7px!important;
+    padding:9px!important;
+  }
+  .calendar-footer .btn{
+    min-height:40px!important;
+    padding:7px 9px!important;
+    font-size:11.5px!important;
+    font-weight:900!important;
+  }
+}
+
+@media(max-width:360px){
+  .operation-actions > .flag-control,
+  .operation-actions > .custom-photo-button,
+  .mod-record-actions > .flag-control,
+  .mod-record-actions > .mod-add-photo-btn,
+  .public-actions > .flag-control,
+  .public-actions > .public-add-photo-btn,
+  .entry-inline-actions > .flag-control,
+  .entry-inline-actions > .entry-add-photo,
+  .entry-inline-actions > .entry-delete-btn{
+    flex-basis:108px!important;
+    width:108px!important;
+    min-width:108px!important;
+    max-width:108px!important;
+  }
+  .entry-inline-actions:has(> :nth-child(3)) > .flag-control,
+  .entry-inline-actions:has(> :nth-child(3)) > .entry-add-photo,
+  .entry-inline-actions:has(> :nth-child(3)) > .entry-delete-btn{
+    min-width:0!important;
+    max-width:102px!important;
+    font-size:9.5px!important;
+  }
+  .calendar-day{min-height:36px!important;font-size:13px!important;}
+  .calendar-weekdays span{font-size:11px!important;}
+  .time-grid select{font-size:15px!important;}
+}
+
 </style>
 
-<script>window.CUSTOM_FORM_CONFIG={"version":10,"storageKey":"conrad_mod_custom_1790151694973","propertyName":"Conrad Abu Dhabi Etihad Towers","guestFields":[{"header":"Breakfast","hint":"Overall breakfast experience; guest feedback; operational observations and table clearance.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"F&B – Other Outlets","hint":"Key observations from restaurants, lounges and other outlets.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Recreation","hint":"Pool, beach, spa, gym observations and guest feedback.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Events","hint":"Event overview and guest feedback, if any.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Opportunity Guests","hint":"Complaints, service recovery opportunities and follow-up actions.","kind":"opportunity","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Other Cases","hint":"Incidents, requests and relevant guest observations.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Follow-up Required","hint":"Actions requiring follow-up, responsible person and due date.","kind":"follow-up","fields":[{"label":"Follow-up Details","type":"text","options":[]},{"label":"Follow-up Date & Time","type":"datetime","options":[]}]}],"checks":["Upon arrival, the room has an extremely fresh, comfortable atmosphere","A specific welcome gift or amenity is provided on the day of arrival","If provided, the welcome amenity is of extremely high quality and distinctive in presentation","The guest room is well-soundproofed","Hotel collateral and any printed products, such as stationery, reading material, notepad paper or pens, are elegant or distinctive in a way that is notable","Hotel collateral and any printed products are in excellent condition","Hotel collateral is accurate and grammatically correct; if provided, magazines are current","The bed is clean and hygienic in appearance and in excellent condition","The bed linens are of high quality and made of natural materials","The bed is exceptionally comfortable","The room promotes good sleep, including effective blackout functionality","There are additional sleep and/or mood aids available for guests","The closets and shelves/drawers are generously spacious and very well lit","There are at least 10 hangers in the closet, convenient for all types of garments","Fresh flowers or live plants are provided by the hotel in the guest room","The bedroom offers a comfortable place to relax, separate from the bed and desk areas","The lighting in the bedroom is comfortable for all necessary daily tasks and has ample natural light","The bedroom is exceptionally clean and extremelly well-maintained","The room is supplied with a distinctive variety of high-quality amenities that enhance the guest experience","If provided, the technology is easy to use and navigate","Electronic outlets are located in convenient locations for the guest","If provided, clocks display accurate time and prior alarms are cleared","The architectural design style of the room is notable in interest or execution","The entire room is true to the thematic elements","The grooming areas are generously spacious so that two persons could easily shower and dress in comfort","Basic amenities including shampoo, conditioner, body wash/gel, lotion, hand soap and cotton products are provided","Beyond basic amenities, the bathroom is supplied with at least three additional types of toiletry items","Bathroom amenities are exceptionally luxurious in quality and presentation","Robes, slippers and sufficient towels are automatically provided","Robes, slippers and bathroom linens are of extremely high quality, well-maintained and in excellent condition, hygienic","Strong water pressure and stable water temperatures are present; showers are easy to operate","Placement of bathroom amenities and linens is convenient and careful","The lighting in the bathroom is sufficient for all intended grooming tasks","The bathroom is exceptionally clean and well-maintained","The bathroom design and appointments are exceptionally noteworthy","All sheets, duvet covers, pillowcases and terry items have been replaced with fresh, laundered linen","All linens, curtains, upholstery and soft furnishings are neatly presented, fully pressed and free from wrinkles, stains or visible wear","All wastebaskets are emptied, clean and free from residue","Guest room glassware, silverware and dishware are clean, sanitized and free from chips, stains or defects","Coffee and tea facilities are clean, fully functional and replenished, including condiments and accompaniments","Kettle is clean, descaled, functional and in excellent condition","Coffee machine is clean, functional and free from residue or defects","All food and beverage amenities, including minibar items, are fully stocked, correctly presented and within expiration dates","TV is switched off or displaying the designated welcome screen, and guest name details are accurate","All furniture doors, cabinets and drawers are fully closed, aligned and functioning correctly","Curtains and sheers are clean, wrinkle-free, symmetrically arranged and operating properly","All kitchen and pantry facilities (where applicable) are clean, functional and well-maintained","The hairdryer is clean, functional and correctly positioned","Toilet tissue and facial tissues are adequately stocked and presented according to brand standards","All room surfaces are free from dust, fingerprints, stains, debris and damage","In-room dining menus, hotel collateral and brand literature are clean, current, undamaged and presented neatly","The room is free from maintenance defects and is fully arrival-ready according to hotel brand standards","The guest is exceptionally comfortable in this room"],"enabledTabs":["reportTab","publicAreaTab","myExperienceTab","inspectionTab"],"customTabs":[]};</script></head>
+<script>window.CUSTOM_FORM_CONFIG={"version":10,"storageKey":"conrad_mod_custom_1790152436245","propertyName":"Conrad Abu Dhabi Etihad Towers","guestFields":[{"header":"Breakfast","hint":"Overall breakfast experience; guest feedback; operational observations and table clearance.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"F&B – Other Outlets","hint":"Key observations from restaurants, lounges and other outlets.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Recreation","hint":"Pool, beach, spa, gym observations and guest feedback.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Events","hint":"Event overview and guest feedback, if any.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Opportunity Guests","hint":"Complaints, service recovery opportunities and follow-up actions.","kind":"opportunity","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Other Cases","hint":"Incidents, requests and relevant guest observations.","kind":"","fields":[{"label":"Details","type":"text","options":[]}]},{"header":"Follow-up Required","hint":"Actions requiring follow-up, responsible person and due date.","kind":"follow-up","fields":[{"label":"Follow-up Details","type":"text","options":[]},{"label":"Follow-up Date & Time","type":"datetime","options":[]}]}],"checks":["Upon arrival, the room has an extremely fresh, comfortable atmosphere","A specific welcome gift or amenity is provided on the day of arrival","If provided, the welcome amenity is of extremely high quality and distinctive in presentation","The guest room is well-soundproofed","Hotel collateral and any printed products, such as stationery, reading material, notepad paper or pens, are elegant or distinctive in a way that is notable","Hotel collateral and any printed products are in excellent condition","Hotel collateral is accurate and grammatically correct; if provided, magazines are current","The bed is clean and hygienic in appearance and in excellent condition","The bed linens are of high quality and made of natural materials","The bed is exceptionally comfortable","The room promotes good sleep, including effective blackout functionality","There are additional sleep and/or mood aids available for guests","The closets and shelves/drawers are generously spacious and very well lit","There are at least 10 hangers in the closet, convenient for all types of garments","Fresh flowers or live plants are provided by the hotel in the guest room","The bedroom offers a comfortable place to relax, separate from the bed and desk areas","The lighting in the bedroom is comfortable for all necessary daily tasks and has ample natural light","The bedroom is exceptionally clean and extremelly well-maintained","The room is supplied with a distinctive variety of high-quality amenities that enhance the guest experience","If provided, the technology is easy to use and navigate","Electronic outlets are located in convenient locations for the guest","If provided, clocks display accurate time and prior alarms are cleared","The architectural design style of the room is notable in interest or execution","The entire room is true to the thematic elements","The grooming areas are generously spacious so that two persons could easily shower and dress in comfort","Basic amenities including shampoo, conditioner, body wash/gel, lotion, hand soap and cotton products are provided","Beyond basic amenities, the bathroom is supplied with at least three additional types of toiletry items","Bathroom amenities are exceptionally luxurious in quality and presentation","Robes, slippers and sufficient towels are automatically provided","Robes, slippers and bathroom linens are of extremely high quality, well-maintained and in excellent condition, hygienic","Strong water pressure and stable water temperatures are present; showers are easy to operate","Placement of bathroom amenities and linens is convenient and careful","The lighting in the bathroom is sufficient for all intended grooming tasks","The bathroom is exceptionally clean and well-maintained","The bathroom design and appointments are exceptionally noteworthy","All sheets, duvet covers, pillowcases and terry items have been replaced with fresh, laundered linen","All linens, curtains, upholstery and soft furnishings are neatly presented, fully pressed and free from wrinkles, stains or visible wear","All wastebaskets are emptied, clean and free from residue","Guest room glassware, silverware and dishware are clean, sanitized and free from chips, stains or defects","Coffee and tea facilities are clean, fully functional and replenished, including condiments and accompaniments","Kettle is clean, descaled, functional and in excellent condition","Coffee machine is clean, functional and free from residue or defects","All food and beverage amenities, including minibar items, are fully stocked, correctly presented and within expiration dates","TV is switched off or displaying the designated welcome screen, and guest name details are accurate","All furniture doors, cabinets and drawers are fully closed, aligned and functioning correctly","Curtains and sheers are clean, wrinkle-free, symmetrically arranged and operating properly","All kitchen and pantry facilities (where applicable) are clean, functional and well-maintained","The hairdryer is clean, functional and correctly positioned","Toilet tissue and facial tissues are adequately stocked and presented according to brand standards","All room surfaces are free from dust, fingerprints, stains, debris and damage","In-room dining menus, hotel collateral and brand literature are clean, current, undamaged and presented neatly","The room is free from maintenance defects and is fully arrival-ready according to hotel brand standards","The guest is exceptionally comfortable in this room"],"enabledTabs":["reportTab","publicAreaTab","myExperienceTab","inspectionTab"],"customTabs":[]};</script></head>
 <body>
 <header class="app-header">
   <button class="btn menu-btn" type="button" onclick="toggleHeaderActions(this)">Hide/Show Buttons</button>
